@@ -1,0 +1,84 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<script src="angular.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: rgb(247, 241, 242); 
+  color:rgb(9, 9, 9); 
+}  
+button {   
+       background-color: #c6c2c2;   
+       width: 100%;  
+        color: rgb(9, 9, 9);   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #090808;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid rgb(250, 246, 246);   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;  
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background-color: rgb(255, 255, 255);  
+    }   
+</style>   
+</head>    
+<body>    
+    <h1> Admin Canvas Login Page </h1>   
+    <form>  
+        <div ng-app="MyApp" ng-controller="MyController">
+            <label>CWL Username : </label>   
+            <input ng-model='login.username' type="text" placeholder="Enter Username" name="username" required>  
+            <label>Password : </label>   
+            <input ng-model='login.password' type="text" placeholder="Enter Password" name="password" required>  
+            <button ng-click = "show()">Login</button> 
+            <input type="checkbox" checked="checked"> Remember me
+            <h1></h1>
+            <a href="#"> Forgot password? </a>  
+            <h1>{{login.username}}</h1> 
+        </div>   
+    </form>     
+</body>  
+
+<script>
+    var app = angular.module('MyApp', []);
+    app.controller('MyController', function($scope) {
+      $scope.login= {username:"", password:""};
+      console.log($scope.login.username)
+      console.log($scope.login.password)
+      //console.log(login.username)
+
+      }
+    );
+  </script>
+  
+</html>  
+
+ 
+
+ 
+
