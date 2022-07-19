@@ -1,0 +1,58 @@
+<html ng-app="MyApp">
+    <head>  
+        <script src="angular.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+        <script type="text/javascript" src="Controller.js"></script>
+        <title> Announcements </title>
+    </head>
+    <body>
+        <div ng-controller = "HelloController">
+            <input ng-model ="greeting.text">
+            <p>{{greeting.text}}</p>
+
+        </form>
+        <div ng-controller = 'announce'>
+            <button ng-click ="add($index)">Create Announcements</button>
+        <form ng-show="showCreate">
+            <input ng-model="announceChange.name">
+            <input ng-model="announceChange.message">
+        </form>
+        <ul>
+            <li ng-repeat='a in announcements'>
+                {{a.name}}: {{a.message}}
+                <button ng-click="deleted($index)"> delete me</button>
+            </li>
+        </ul>
+        </div>
+    </body>
+    <script>
+        var m=angular.module('MyApp',[])
+m.controller('HelloController',function($scope){
+    $scope.greeting = {text: 'hello'};
+});
+ function HelloController($scope){
+     $scope.greeting = {text: 'hello'};
+ };
+
+//grab the list from http request later on
+var announcements = [{name:'A1', message:'hi'},
+{name:'A2', message:'hi'}, 
+{name:'A3', message:'hi'}, ]
+var announceChange = {name:'a1', message:'e'}
+
+function announce($scope){
+    $scope.announcements=announcements;
+    $scope.deleted=function(index){
+        $scope.announcements.splice(index, 1)
+    }
+    $scope.announceChange=announceChange;
+    $scope.showCreate=true;
+    $scope.add=function(index){
+        //$scope.showCreate = true;
+        $scope.announcements.push({name:announceChange.name, message:announceChange.message})
+    }
+}
+
+
+    </script>
+</html>
