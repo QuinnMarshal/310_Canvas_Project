@@ -1,0 +1,53 @@
+<html ng-app="MyApp">
+    <head>  
+        <script src="angular.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+        <script type="text/javascript" src="Controller.js"></script>
+        <title> Message</title>
+    </head>
+    <body>
+        <div ng-controller = "HelloController">
+        </form>
+        <div ng-controller = 'announce'>
+            <button ng-click ="add($index)"> Add new message</button>
+        <form ng-show="showCreate">
+            <h1>Send to:</h1>
+            <input ng-model="announceChange.recipient" placeholder="enter recipient">
+            <h4>Message title:</h4>
+            <input ng-model="announceChange.name" placeholder="enter message title">
+            <h4>Message:</h4>
+            
+            <textarea ng-model="announceChange.message" placeholder="enter message">
+                At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+            </textarea>
+        </form>
+        <ul>
+            <li ng-repeat='a in announcements'>
+                <h2>
+                    Message sent to: {{a.recipient}}
+                </h2>{{a.name}}: {{a.message}}
+                <button ng-click="deleted($index)"> delete me</button>
+            </li>
+        </ul>
+        </div>
+    </body>
+    <script>
+
+//grab the list from http request later on
+var announcements = [{name:'A1', message:'hi',recipient:'me'}]
+var announceChange = {name:'', message:'', recipient:''}
+
+function announce($scope){
+    $scope.announcements=announcements;
+    $scope.deleted=function(index){
+        $scope.announcements.splice(index, 1)
+    }
+    $scope.announceChange=announceChange;
+    $scope.showCreate=true;
+    $scope.add=function(index){
+        //$scope.showCreate = true;
+        $scope.announcements.push({name:announceChange.name, message:announceChange.message,recipient:announceChange.recipient})
+    }
+}
+    </script>
+</html>

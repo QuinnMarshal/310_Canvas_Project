@@ -6,10 +6,7 @@
         <title> Announcements </title>
     </head>
     <body>
-        <div ng-controller = "HelloController">
-            <input ng-model ="greeting.text">
-            <p>{{greeting.text}}</p>
-
+        <div>
         </form>
         <div ng-controller = 'announce'>
             <button ng-click ="add($index)">Create Announcements</button>
@@ -27,12 +24,6 @@
     </body>
     <script>
         var m=angular.module('MyApp',[])
-m.controller('HelloController',function($scope){
-    $scope.greeting = {text: 'hello'};
-});
- function HelloController($scope){
-     $scope.greeting = {text: 'hello'};
- };
 
 //grab the list from http request later on
 var announcements = [{name:'A1', message:'hi'},
