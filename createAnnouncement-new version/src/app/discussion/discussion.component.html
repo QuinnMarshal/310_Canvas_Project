@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discussion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+<div class="container">
+<div class="main-body p-0">
+    <div class="inner-wrapper">
+        <!-- Inner sidebar -->
+        <div class="inner-sidebar">
+            <!-- Inner sidebar header -->
+            <div class="inner-sidebar-header justify-content-center">
+                <button (click)="add()" style = "margin-top: 50px" class="btn btn-primary has-icon btn-block" type="button" data-toggle="modal" data-target="#threadModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    NEW DISCUSSION
+                </button>
+            </div>
+            <!-- /Inner sidebar header -->
+                <input [(ngModel)]="title"  placeholder="Enter your discussion title" name="title" style="margin-top: 10px" type="text">
+                <div>
+                    <textarea [(ngModel)]="post" name="post" placeholder="Enter your discussion" style="margin-top: 10px"> </textarea>
+                </div>
+            <!-- Inner sidebar body -->
+            <div class="inner-sidebar-body p-0">
+                <div class="p-3 h-100" data-simplebar="init">
+                    <div class="simplebar-wrapper" style="margin: -16px;">
+                        <div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div>
+                        <div class="simplebar-mask">
+                            <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
+                                    <div class="simplebar-content" style="padding: 16px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div>
+                    <div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 151px; display: block; transform: translate3d(0px, 0px, 0px);"></div></div>
+                </div>
+            </div>
+            <!-- /Inner sidebar body -->
+        </div>
+        <!-- /Inner sidebar -->
+
+        <!-- Inner main -->
+        <div class="inner-main">
+            <!-- /Inner main header -->
+
+            <!-- Inner main body -->
+
+            <!-- Forum List -->
+            <div *ngFor="let post of discussionList; let i = index" class="inner-main-body p-2 p-sm-3 collapse forum-content show">
+                <div class="card mb-2">
+                    <div class="card-body p-2 p-sm-3">
+                        <div class="media forum-item">
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
+                            <div class="media-body">
+                                <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">{{post.name}}</a></h6>
+                                <p class="text-secondary">
+                                 {{post.message}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Forum List -->
+
+            <!-- Forum Detail -->
+            <div class="inner-main-body p-2 p-sm-3 collapse forum-content">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="media forum-item">
+                            <div class="media-body ml-3">
+                                <h5 class="mt-1">{{title}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Forum Detail -->
+
+            <!-- /Inner main body -->
+        </div>
+        <!-- /Inner main -->
+    </div>
+
+    <!-- New Thread Modal -->
+    <div class="modal fade" id="threadModal" tabindex="-1" role="dialog" aria-labelledby="threadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header d-flex align-items-center bg-primary text-white">
+                        <h6 class="modal-title mb-0" id="threadModalLabel">New Discussion</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="threadTitle">Title</label>
+                            <input type="text" class="form-control" id="threadTitle" placeholder="Enter title" autofocus="" />
+                        </div>
+                        <textarea class="form-control summernote" style="display: none;"></textarea>
+
+                        <div class="custom-file form-control-sm mt-3" style="max-width: 300px;">
+                            <input type="file" class="custom-file-input" id="customFile" multiple="" />
+                            <label class="custom-file-label" for="customFile">Attachment</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+  </body>
+</html>
