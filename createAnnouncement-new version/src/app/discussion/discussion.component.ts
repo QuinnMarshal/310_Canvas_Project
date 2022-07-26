@@ -9,9 +9,7 @@ export class DiscussionComponent implements OnInit {
   public title = '';
   public post = '';
 
-  discussionList: Array<{name: string, message:string}> = [{name:'A1', message:'hi'},
-  {name:'A2', message:'hi'}, 
-  {name:'A3', message:'hi'}, ]
+  discussionList: Array<{name: string, message:string}> = [{name:'A1', message:'hi'},]
   discussionChange: Array<string> = ['',''];
   add(){
     this.discussionChange  = [this.title,this.post]

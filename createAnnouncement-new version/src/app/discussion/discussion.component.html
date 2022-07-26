@@ -15,7 +15,7 @@
         <div class="inner-sidebar">
             <!-- Inner sidebar header -->
             <div class="inner-sidebar-header justify-content-center">
-                <button class="btn btn-primary has-icon btn-block" type="button" data-toggle="modal" data-target="#threadModal">
+                <button (click)="add()" style = "margin-top: 50px" class="btn btn-primary has-icon btn-block" type="button" data-toggle="modal" data-target="#threadModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2">
                         <line x1="12" y1="5" x2="12" y2="19"></line>
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -24,8 +24,7 @@
                 </button>
             </div>
             <!-- /Inner sidebar header -->
-                <input [(ngModel)]="title" name="title" style="margin-top: 10px" type="text">
-                {{title}}
+                <input [(ngModel)]="title"  placeholder="Enter your discussion title" name="title" style="margin-top: 10px" type="text">
                 <div>
                     <textarea [(ngModel)]="post" name="post" placeholder="Enter your discussion" style="margin-top: 10px"> </textarea>
                 </div>
@@ -69,11 +68,6 @@
                                 <p class="text-secondary">
                                  {{post.message}}
                                 </p>
-                                <p class="text-muted"><a href="javascript:void(0)">drewdan</a> replied <span class="text-secondary font-weight-bold">13 minutes ago</span></p>
-                            </div>
-                            <div class="text-muted small text-center align-self-center">
-                                <span class="d-none d-sm-inline-block"><i class="far fa-eye"></i> 19</span>
-                                <span><i class="far fa-comment ml-2"></i> 3</span>
                             </div>
                         </div>
                     </div>

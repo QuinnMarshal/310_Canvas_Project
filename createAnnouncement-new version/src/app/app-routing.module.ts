@@ -7,7 +7,7 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
 import { ModulesComponent } from './modules/modules.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
-
+import { MessageComponent } from './message/message.component';
 
 
 const routes: Routes = [
@@ -17,7 +17,8 @@ const routes: Routes = [
   {path: 'quizzes', component:QuizzesComponent},
   {path: 'modules', component:ModulesComponent},
   {path: 'main', component:MainComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'message', component:MessageComponent}
 
 ];
 
@@ -26,4 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [AnnouncementsComponent, DiscussionComponent, AssignmentComponent,QuizzesComponent,ModulesComponent,MainComponent,LoginComponent];
+export const routingComponents = [MessageComponent, AnnouncementsComponent, DiscussionComponent, AssignmentComponent,QuizzesComponent,ModulesComponent,MainComponent,LoginComponent];

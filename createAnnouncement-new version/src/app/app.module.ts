@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
@@ -13,6 +13,7 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { MatIconModule} from '@angular/material/icon';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { ModulesComponent } from './modules/modules.component';
+import { MessageComponent } from './message/message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +22,15 @@ import { ModulesComponent } from './modules/modules.component';
     LoginComponent,
     AssignmentComponent,
     QuizzesComponent,
-    ModulesComponent
+    ModulesComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
