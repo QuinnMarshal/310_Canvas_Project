@@ -5,14 +5,6 @@
   <script type="text/javascript" src="Controller.js"></script>
   <title> Main Page </title>
 </head>
-
-<body>
-  <h1>Assignment</h1>
-
-  <div class="topnav">
-  </div>
-</body>
-
 <style>
   /* Add a black background color to the top navigation */
   .topnav {
@@ -46,15 +38,22 @@
 </style>
 
 
-<input style = "margin-left: 50px; margin-top:30px;" type="file" class="file-input"
-       (change)="onFileSelected($event)" #fileUpload>
+<body>
+  <h1>Assignment</h1>
 
-<div style = "margin-left: 50px; margin-top:30px;">
+  <div class="topnav">
+  </div>
 
-   {{fileName || "No file uploaded yet."}}
+  <input style = "margin-left: 50px; margin-top:30px;" type="file" class="file-input"
+        (change)="onFileSelected($event)" #fileUpload>
 
-    <button 
-      (click)="fileUpload.click()">
-        attach_file
-    </button>
-</div>
+  <div style = "margin-left: 50px; margin-top:30px;">
+
+    {{fileName || "No file uploaded yet."}}
+
+      <button 
+        (click)="fileUpload.click()">
+          attach_file
+      </button>
+  </div>
+</body>

@@ -8,6 +8,8 @@ import { ModulesComponent } from './modules/modules.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { MessageComponent } from './message/message.component';
+import { RegisterComponent } from './register/register.component';
+import { GradeComponent } from './grade/grade.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,8 @@ const routes: Routes = [
   {path: 'modules', component:ModulesComponent},
   {path: 'main', component:MainComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'message', component:MessageComponent}
+  {path: 'message', component:MessageComponent},
+  {path: 'grade', component:GradeComponent}
 
 ];
 
@@ -27,4 +30,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [MessageComponent, AnnouncementsComponent, DiscussionComponent, AssignmentComponent,QuizzesComponent,ModulesComponent,MainComponent,LoginComponent];
+export const routingComponents = [GradeComponent, RegisterComponent, MessageComponent, AnnouncementsComponent, DiscussionComponent, AssignmentComponent,QuizzesComponent,ModulesComponent,MainComponent,LoginComponent];

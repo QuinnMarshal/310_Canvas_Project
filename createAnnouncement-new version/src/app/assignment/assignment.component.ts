@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentComponent implements OnInit {
   fileName = '';
+  assignments:{name:string,grade:number}[] = [{name:'student1',grade:90},{name:'student2',grade:90}];
   constructor() { 
   }
   onFileSelected(event: any){

@@ -2,6 +2,12 @@
             
     <div class="card shadow" >
       <div class="card-header  bg-secondary text-white">
+        <button>
+          Add question
+        </button>
+        <button>
+          Delete question
+        </button>
            <h6> Question: {{ totalQuestions }} </h6>
           </div>
       <ul class="list-group list-group-flush">
@@ -9,7 +15,7 @@
         class="list-group-item choice"                 
         > 
         <div style='transform: scale(0.65); position: relative; top: -100px;'>
-            <h3>{{choice.question}}</h3>
+            <h3>{{choice.question}}  </h3>
             <p>Choose 1 answer</p>
             <hr />
           
